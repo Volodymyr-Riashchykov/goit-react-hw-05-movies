@@ -1,0 +1,43 @@
+.btn {
+  display: flex;
+  padding: 5px 20px;
+  margin: 10px auto;
+  background-color: rgba(220, 220, 220, 0.3);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(220, 220, 220, 0.9);
+}
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.list {
+  /* display: flex; */
+  list-style: initial;
+  padding-left: 30px;
+}
+.img {
+  max-width: 50vw;
+  padding-right: 10px;
+}
+.over {
+  max-width: 50vw;
+}
+.title {
+  text-align: center;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  color: #000;
+}
+.link {
+  font-size: 18px;
+  color: #000;
+}
+.link_active {
+  color: rgba(255, 0, 0, 0.9);
+}

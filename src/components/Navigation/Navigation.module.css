@@ -1,0 +1,24 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 20, 255, 0.9);
+  z-index: 1;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 15px;
+}
+.list {
+  display: flex;
+  padding: 15px;
+}
+.link {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+}
+.active {
+  color: rgba(255, 0, 0, 0.9);
+}
