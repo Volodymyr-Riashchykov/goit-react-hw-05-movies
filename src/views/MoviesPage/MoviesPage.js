@@ -27,6 +27,10 @@ export default function MoviesPage() {
       
       searchApi(searchQuery)
         .then(({ data }) => {
+          if(data.results.length === 0) {
+            return toast.info(`По запросу '${searchQuery}' ничего не найдено`);
+        }
+
         setMovies(data.results);
       })
       .catch((error) =>

@@ -2,6 +2,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import {
     NavLink,
     useHistory,
+    useLocation,
     useParams,
     useRouteMatch,
     Route,
@@ -17,8 +18,10 @@ const Reviews = lazy(() => import("../Reviews/Reviews" /* webpackChunkName: "Rev
 
 export default function MovieDetailsPage(prop) {
     const [movies, setMovies] = useState([]);
+    const [pathBack,setPathBack] = useState('/')
     const { movieId } = useParams();
     const history = useHistory();
+    const location = useLocation();
     const { url } = useRouteMatch();
 
     useEffect(() => {
@@ -31,12 +34,18 @@ export default function MovieDetailsPage(prop) {
         );
     }, [movieId]);
 
+    useEffect(() => {
+        if(!location.state) return
+        setPathBack(location.state.from.location.pathname +
+            location.state.from.location.search);
+    }, [location])
+
     return (
         <>
             <button
                 className={s.btn}
                 type="button"
-                onClick={() => { history.goBack() }}
+                onClick={() => history.push(pathBack)}
             >
                 Go Back
             </button>
